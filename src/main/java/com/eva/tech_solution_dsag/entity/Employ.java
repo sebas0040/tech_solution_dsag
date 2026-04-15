@@ -38,6 +38,10 @@ public class Employ {
         this.updatedAt = Instant.now();
     }
 
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department department;
+
     // Getters y Setters
 
     public Long getId() { return id; }
@@ -63,4 +67,8 @@ public class Employ {
     public Instant getUpdatedAt() { return updatedAt; }
 
     public void setUpdatedAt(Instant updatedAt) { this.updatedAt = updatedAt; }
+
+    public Department getDepartment() { return department; }
+
+    public void setDepartment(Department department) { this.department = department; }
 }
